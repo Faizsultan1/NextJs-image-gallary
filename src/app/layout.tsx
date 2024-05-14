@@ -1,22 +1,25 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
+import Navbar from "@/components/Navbar"
 
-const inter = Inter({ subsets: ["latin"] });
 
+export const revalidate = 10
 export const metadata: Metadata = {
-  title: "Image Gallery",
-  description: "A website where u can ",
-};
+	title: "Image Gallary",
+	description: "Image Gallary where u can find all of your favourite images",
+}
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body >
+				<Navbar/>
+				<main className="max-w-6xl mx-auto">{children}</main>
+			</body>
+		</html>
+	)
 }
