@@ -32,10 +32,10 @@ export default async function Gallery({ topic = "curated", page }: Props) {
 		return <h2 className="m-4 text-2xl font-bold">No Images Found</h2>
 
 	const photosWithBlur = await addBluredDataUrls(images)
-	
-	const {prevPage, nextPage} = getPrevNextPage(images)
 
-	const footerProps = {topic, page, nextPage, prevPage}
+	const { prevPage, nextPage } = getPrevNextPage(images)
+
+	const footerProps = { topic, page, nextPage, prevPage }
 	return (
 		<>
 			<section className=" my-3 grid grid-cols-2 sm:grid-cols-gallery auto-rows-[7px] sm:auto-rows-[11px] ">
@@ -43,7 +43,8 @@ export default async function Gallery({ topic = "curated", page }: Props) {
 					<ImgContainer key={photo.id} photo={photo} />
 				))}
 			</section>
-			<Footer {...footerProps}/>
+
+			<Footer {...footerProps} />
 		</>
 	)
 }

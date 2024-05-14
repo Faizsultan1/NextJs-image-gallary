@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Suspense } from "react"
 
 type Props = {
 	topic: string

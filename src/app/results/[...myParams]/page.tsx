@@ -1,5 +1,6 @@
 import Gallery from "@/components/Gallery"
-
+import Loader from "@/components/Loader"
+import { Suspense } from "react"
 type Props = {
 	params: {
 		myParams: (string | undefined)[]
@@ -19,7 +20,9 @@ export default function SearchResults({ params: { myParams } }: Props) {
 	const page = myParams?.[1] ?? "1"
 	return (
 		<>
-			<Gallery topic={topic} page={page} />
+			<Suspense fallback={<Loader/>}>
+				<Gallery topic={topic} page={page} />
+			</Suspense>
 		</>
 	)
 }

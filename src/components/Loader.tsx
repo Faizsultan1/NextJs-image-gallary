@@ -1,6 +1,6 @@
 import React from "react"
 
-const loading = () => {
+const Loader = () => {
 	const dummy = Array.from({ length: 15 })
 	return (
 		<div className="px-2 my-3 grid grid-cols-gallery gap-2">
@@ -11,4 +11,4 @@ const loading = () => {
 	)
 }
 
-export default loading
+export default Loader

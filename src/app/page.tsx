@@ -1,8 +1,11 @@
-import Gallery from "@/components/Gallery";
-
+import Gallery from "@/components/Gallery"
+import Loader from "@/components/Loader"
+import { Suspense } from "react"
 
 export default function Home() {
-  return (
-    <Gallery/>
-  );
+	return (
+		<Suspense fallback={<Loader/>}>
+			<Gallery />
+		</Suspense>
+	)
 }
