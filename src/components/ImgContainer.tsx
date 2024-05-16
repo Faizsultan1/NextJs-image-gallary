@@ -12,7 +12,7 @@ const ImgContainer = ({ photo }: Props) => {
 	
 	return (
 		<div className="w-[175px] sm:w-[270px] justify-self-center" style={{gridRow : `span ${photoSpan}`}}>
-			<Link href={photo.url} target="_blank" className="grid place-content-center bg-black"></Link>
+			<Link href={photo.url} target="_blank" className="grid place-content-center bg-black">
 			<div className="rounded-xl  overflow-hidden group">
 			<Image
 				src={photo.src.large}
@@ -26,6 +26,7 @@ const ImgContainer = ({ photo }: Props) => {
 				sizes="250px"
 			/>
 			</div>
+   </Link>
 		</div>
 	)
 }
